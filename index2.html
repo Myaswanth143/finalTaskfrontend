@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+   
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    
+    <div class="container-2" >
+      
+      <div class="">
+        <h2 class="text-primary ">ADD TO CART</h2><h5>Create a shopping cart features where users can add products to the cart.</h5>
+        <p><strong>Instructions:</strong>
+        <ul>
+            <li>Create a list of products with a button text  to each products labeled "ADD TO CART".</li>
+            <li>When the button is clicked, add the product to a cart(an array) and display the carts content  below  the products list. </li>
+    <li>Show the total number of items in the cart  and the total price</li>
+        </ul>
+        </p>
+      <div>
+       
+        <button class="btn btn-primary codebtn2" onclick="codebtn2()"><a href="index21.html" style="text-decoration: none;color:white"> Run the code</a></button>
+        <button class="btn btn-secondary"><a href="index.html">Back</a></button>
+        <div class="code_execution">
+        
+
+        </div>
+      </div>
+      
+      </div>
+      <div class="bg-black p-0">
+        <p>
+         <pre class="text-white"> 
+          "const showCart = document.querySelector(".showCart");
+          const cartShow = document.querySelector(".cartShow");
+          const costPrice = document.querySelector(".costPrice");
+          const val = document.querySelector(".val");
+          const cartCount = document.getElementById("count");
+          const question_2 = document.querySelector(".question-2");
+          let index = 0;
+          async function fetchCart() {
+            const res = await fetch("https://fakestoreapi.com/products");
+          
+            const data = await res.json();
+            console.log(data);
+            showCart.innerHTML += data
+              .map((item, index) => {
+                return ` div class="card" style="width: 18rem; height:25rem">
+                      img src=${
+                        item.image
+                      } class="card-img-top" alt="..." width="15%" height="40%">
+                      div class="card-body" height=20px>
+                      h6 class="card-title">${item.title}/h6>
+                      p class="card-text">Rating:${item.rating.rate}/p>
+                      p class="card-text">Price:${item.price}/p>
+          
+                      /div>
+                      button class="btn btn-primary" onclick=addToCart(${index},1,${item.price.toFixed(
+                  0
+                )})>Add to Cart/button>
+                      /div> `;
+              })
+              .join("");
+          
+            // console.log(addToCart());
+          }
+          fetchCart();
+          let sum = 0;
+          let count = 0;
+          function addToCart(index, num, cost) {
+            sum += cost;
+            costPrice.textContent = sum;
+            count += num;
+            cartCount.innerHTML = count;
+          
+            console.log(sum);
+            fetch("https://fakestoreapi.com/products")
+              .then((res) => res.json())
+              .then((data) => {
+                cartShow.innerHTML += div>
+                  div class="addgrid">
+                  div>
+                  img src="${data[index].image}" alt="image" width=40% height=60%/>
+                  /div>
+                  div>
+                  h6 class="card-title">${data[index].title}/h6>
+                  p class="card-text">Price:${data[index].price}/p>
+                  /div>
+                  /div>
+                  button class="btn btn-warning" onclick=delfun(this,${data[index].price})>Remove</button>
+                  /div>br>;
+              });
+          }
+          console.log(sum);
+          const delfun = function (e, price) {
+            e.closest("div").remove();
+            sum -= price;
+            count = count - 1;
+            cartCount.innerHTML = count;
+            costPrice.textContent = sum;
+          };
+          function codebtn2() {
+            question_2.style.opacity = 1;
+          }"
+         </pre>
+        </p>
+      </div>
+   
+    </div>
+    
+  </body>
+  
+</html>

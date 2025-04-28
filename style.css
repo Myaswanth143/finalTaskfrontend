@@ -1,0 +1,42 @@
+.container-1 {
+  display: grid;
+  grid-template-columns: 2fr 4fr 4fr 2fr;
+}
+.container-2 {
+  display: grid;
+  grid-template-columns: 6fr 1fr;
+  margin: 20px;
+}
+.showCart {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 5px;
+}
+.cartShow {
+  display: block;
+}
+.addgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#count {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+}
+.fa-cart-arrow-down {
+  position: relative;
+  right: 20px;
+  bottom: 5px;
+}
+.colorblack {
+  background-color: black;
+}
+.btn-color {
+  color: white;
+  background-color: #0d6efd;
+}
+.toggle-btn {
+  border-radius: 10px;
+  border-color: none;
+}
