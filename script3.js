@@ -13,6 +13,7 @@ const setError = (element, message) => {
   const inpControls = element.parentElement;
   const errorDisplay = inpControls.querySelector(".error");
   errorDisplay.innerHTML = message;
+  document.getElementById("datasub").style.display = "none";
 };
 const setSuccess = (element) => {
   const inpControls = element.parentElement;
